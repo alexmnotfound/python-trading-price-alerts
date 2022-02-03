@@ -1,5 +1,7 @@
-# Virtual env
+# Virtualenv
+config/__pycache__/
 .idea/
 
-# User auth data
+
+# Local files
 config/auth.py

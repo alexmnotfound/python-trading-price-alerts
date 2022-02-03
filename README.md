@@ -9,7 +9,7 @@ Price alerts for crypto & stocks.
 
 ## Price triggers
 
-All the indicator are calculated manually
+All the indicators are calculated manually
 - Custom prices
 - Simple Moving Average
     - N = 200 & 50
