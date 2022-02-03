@@ -1,0 +1,5 @@
+# Virtual env
+.idea/
+
+# User auth data
+config/auth.py
