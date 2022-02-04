@@ -25,4 +25,6 @@ def sendImg(ID=telegram_group_chatid, caption='', img=''):
                   caption=caption,
                   photo=open(img, 'rb'))
 
-sendMsg(ID=telegram_group_chatid, msg='Comment alez vous?')
+# Try the function
+# sendMsg(ID=telegram_group_chatid, msg='Comment alez vous?')
+
