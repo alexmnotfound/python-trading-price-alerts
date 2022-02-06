@@ -37,6 +37,9 @@ def checkSheet(sheet_id, sheet_range):
     :param sheetRange: Sheet and Range
     :return: sabe Dios
     """
+    # Defino los archivos locales
+    credentials = 'credentials.json'
+    token_pickle = 'token.pickle'
 
     # Defino el scope a autorizar, variable para las credenciales e ID de la hoja
     SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -47,8 +50,8 @@ def checkSheet(sheet_id, sheet_range):
     creds = None
 
     # Solicito credenciales
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists(token_pickle):
+        with open(token_pickle, 'rb') as token:
             creds = pickle.load(token)
 
     # If there are no (valid) credentials available, let the user log in.
@@ -57,10 +60,10 @@ def checkSheet(sheet_id, sheet_range):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                credentials, SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
+        with open(token_pickle, 'wb') as token:
             pickle.dump(creds, token)
 
     # Defino service a utilizar (ver Scopes)
@@ -76,8 +79,8 @@ def checkSheet(sheet_id, sheet_range):
     return result
 
 
-data = checkSheet(sheet_id, sheet_range)
+#data = checkSheet(sheet_id, sheet_range)
 
-print(data)
+#print(data)
 
 
